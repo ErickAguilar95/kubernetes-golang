@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: golang-pod
+spec:
+  containers:
+  - name: golang-pod
+    image: aguila95/golang-app:latest
+    volumeMounts:
+    - name: mypvc-v
+      mountPath: /usr/src/app
+  volumes:
+  - name: mypvc-v
+    persistentVolumeClaim:
+      claimName: mypvc
