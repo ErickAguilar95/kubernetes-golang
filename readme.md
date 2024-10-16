@@ -1,7 +1,6 @@
 # Ejemplo Kubernetes con Golang
 
 ## Requisitos del proyecto
----
 
 - [x] Docker
 - [x] Minikube
@@ -9,15 +8,12 @@
 - [x] kubectl
 
 ## ¿Qué vamos a hacer?
----
 Crearemos un clúster de Kubernetes utilizando Minikube como clúster local. También utilizaremos un pequeño proyecto de Golang y Docker como endpoint y veremos cómo balancea las cargas Kubernetes.
 
 ## ¿Qué es Kubernetes?
----
 Kubernetes es una plataforma de código abierto diseñada para automatizar la implementación, el escalado y la gestión de aplicaciones en contenedores. Permite orquestar múltiples contenedores distribuidos en un clúster de servidores, proporcionando herramientas para equilibrar la carga, gestionar el almacenamiento, supervisar el estado de los contenedores y garantizar que las aplicaciones se mantengan en funcionamiento de manera eficiente.
 
 ## Conceptos básicos de Kubernetes
----
 ### Deployment
 Un Deployment es un objeto que se utiliza para gestionar la implementación y el ciclo de vida de aplicaciones en contenedores. Proporciona una forma declarativa de definir cómo deben ejecutarse y gestionarse las aplicaciones, especificando detalles como la imagen del contenedor, el número de réplicas (pods) que deben estar corriendo y cómo realizar actualizaciones o cambios sin interrumpir el servicio.
 
@@ -47,7 +43,6 @@ Cuando un servicio se define como NodePort, actúa de manera similar a un load b
 *Sin embargo, si estás en un entorno en la nube (AWS, GCP, Azure, etc.), puedes usar un servicio de tipo LoadBalancer que balanceará el tráfico entre los pods. En Minikube, no tendrás un balanceador de carga externo, pero puedes simular el comportamiento de un LoadBalancer usando el servicio de tipo NodePort.*
 
 ## Minikube
----
 Minikube es una herramienta que permite ejecutar un clúster de Kubernetes local en una sola máquina, como un entorno de desarrollo. Es ideal para aprender y probar Kubernetes sin necesidad de desplegar un clúster completo en un proveedor de nube o una infraestructura compleja.
 
 ### Instalación
@@ -88,7 +83,6 @@ $ minikube ip
 ```
 
 ## Ejecución de nuestro primer clúster
----
 <small>**Los outputs podrían variar según las características de cada equipo**</small>
 
 Vamos a crear nuestro primer clúster con Minikube.
@@ -192,10 +186,8 @@ $ curl 192.168.49.2:30001
 {"message":"Hello response by 10.244.0.4"}
 ```
 ## Conclusión
----
 En este ejemplo, hemos demostrado cómo crear un clúster de Kubernetes local utilizando Minikube y desplegar una pequeña aplicación Go para ver cómo Kubernetes maneja el escalado y el balanceo de carga
 
 ## Referencias
----
 
 - [Repositorio del proyecto Golang Simple API](https://github.com/ErickAguilar95/golang-simple-api.git)
