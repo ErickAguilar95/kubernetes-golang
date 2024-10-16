@@ -1,33 +1,26 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment # Defines the resource type as Deployment
 metadata:
-  name: golang-deployment
+  name: golang-deployment # Name of the Deployment
 spec:
-  replicas: 2
+  replicas: 2 # Number of pod replicas
   selector:
     matchLabels:
-      app: golang-app
+      app: golang-app # Selector to identify the pods managed by this Deployment
   template:
     metadata:
       labels:
-        app: golang-app
+        app: golang-app # Labels applied to the pods created by this template
     spec:
       containers:
-        - name: golang-kube
-          image: aguila95/golang-simple-api:latest
+        - name: golang-kube # Name of the container
+          image: aguila95/golang-simple-api:latest # Container image
           resources:
             requests:
-              cpu: "100m"
-              memory: "128Mi"
-              ephemeral-storage: "1Gi"
+              cpu: "100m" # Minimum CPU request
+              memory: "128Mi" # Minimum memory request
+              ephemeral-storage: "1Gi" # Minimum ephemeral storage request
             limits:
-              cpu: "500m"
-              memory: "256Mi"
-              ephemeral-storage: "2Gi"
-          volumeMounts:
-            - name: mypvc-v
-              mountPath: /usr/src/app
-      volumes:
-        - name: mypvc-v
-          persistentVolumeClaim:
-            claimName: mypvc
+              cpu: "500m" # Maximum CPU limit
+              memory: "256Mi" # Maximum memory limit
+              ephemeral-storage: "2Gi" # Maximum ephemeral storage limit
