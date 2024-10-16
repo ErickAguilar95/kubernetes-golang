@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: golang-kube
-          image: aguila95/golang-app:latest
+          image: aguila95/golang-simple-api:latest
           resources:
             requests:
               cpu: "100m"
